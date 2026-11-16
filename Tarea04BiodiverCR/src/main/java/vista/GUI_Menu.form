@@ -145,6 +145,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Realizar Actividad"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_RealizarActividadActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_VerResultados">
           <Properties>
@@ -159,6 +162,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver resultados"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_VerResultadosActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_Salir">
           <Properties>

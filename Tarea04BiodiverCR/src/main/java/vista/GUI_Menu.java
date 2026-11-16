@@ -4,19 +4,29 @@
  */
 package vista;
 
+import controlador.ControladorLibro;
+
 /**
  *
  * @author jimer
  */
 public class GUI_Menu extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_Menu.class.getName());
+
+    private ControladorLibro controlador;
+
+    private static final java.util.logging.Logger logger
+            = java.util.logging.Logger.getLogger(GUI_Menu.class.getName());
 
     /**
      * Creates new form GUI_Menu
      */
     public GUI_Menu() {
         initComponents();
+    }
+
+    public GUI_Menu(ControladorLibro controlador) {
+        initComponents();
+        this.controlador = controlador;
     }
 
     /**
@@ -58,11 +68,21 @@ public class GUI_Menu extends javax.swing.JFrame {
         btn_RealizarActividad.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btn_RealizarActividad.setForeground(new java.awt.Color(0, 102, 0));
         btn_RealizarActividad.setText("Realizar Actividad");
+        btn_RealizarActividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RealizarActividadActionPerformed(evt);
+            }
+        });
 
         btn_VerResultados.setBackground(new java.awt.Color(204, 255, 153));
         btn_VerResultados.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btn_VerResultados.setForeground(new java.awt.Color(0, 102, 0));
         btn_VerResultados.setText("Ver resultados");
+        btn_VerResultados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VerResultadosActionPerformed(evt);
+            }
+        });
 
         btn_Salir.setBackground(new java.awt.Color(204, 255, 102));
         btn_Salir.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -139,8 +159,16 @@ public class GUI_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_LeerLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LeerLibroActionPerformed
-        // TODO add your handling code here:
+        controlador.abrirLibro(this);
     }//GEN-LAST:event_btn_LeerLibroActionPerformed
+
+    private void btn_RealizarActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RealizarActividadActionPerformed
+        controlador.abrirActividad(this);
+    }//GEN-LAST:event_btn_RealizarActividadActionPerformed
+
+    private void btn_VerResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerResultadosActionPerformed
+      controlador.abrirResultados(this);
+    }//GEN-LAST:event_btn_VerResultadosActionPerformed
 
     /**
      * @param args the command line arguments

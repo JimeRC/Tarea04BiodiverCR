@@ -4,19 +4,38 @@
  */
 package vista;
 
+import controlador.ControladorLibro;
+import modelo.Pagina;
+
 /**
  *
  * @author jimer
  */
 public class GUI_Libro extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_Libro.class.getName());
+
+    private ControladorLibro controlador;
+    private int paginaActual = 0;
 
     /**
      * Creates new form GUI_Libro
      */
-    public GUI_Libro() {
+    public GUI_Libro(ControladorLibro controlador) {
         initComponents();
+        this.controlador = controlador;
+        mostrarPagina();
+    }
+
+    private void mostrarPagina() {
+        Pagina pagina = controlador.obtenerPagina(paginaActual);
+
+        if (pagina != null) {
+            lbl_NumeroPagina.setText("Página "
+                    + pagina.getNumeroPagina() + " de 3");
+
+            lbl_Tema.setText(pagina.getTitulo());
+
+            txt_Contenido.setText(pagina.getContenido());
+        }
     }
 
     /**
@@ -77,10 +96,20 @@ public class GUI_Libro extends javax.swing.JFrame {
         btn_Siguiente.setBackground(new java.awt.Color(0, 102, 0));
         btn_Siguiente.setForeground(new java.awt.Color(255, 255, 255));
         btn_Siguiente.setText("Siguiente");
+        btn_Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SiguienteActionPerformed(evt);
+            }
+        });
 
         btn_VolverMenu.setBackground(new java.awt.Color(0, 102, 0));
         btn_VolverMenu.setForeground(new java.awt.Color(255, 255, 255));
         btn_VolverMenu.setText("Volver al menú");
+        btn_VolverMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_VolverMenuActionPerformed(evt);
+            }
+        });
 
         btn_Actividad.setBackground(new java.awt.Color(0, 102, 0));
         btn_Actividad.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,33 +186,23 @@ public class GUI_Libro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_AnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AnteriorActionPerformed
-        // TODO add your handling code here:
+        if (paginaActual > 0) {
+            paginaActual--;
+            mostrarPagina();
+        }
     }//GEN-LAST:event_btn_AnteriorActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+    private void btn_SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SiguienteActionPerformed
+        if (paginaActual < 2) {
+            paginaActual++;
+            mostrarPagina();
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btn_SiguienteActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GUI_Libro().setVisible(true));
-    }
+    private void btn_VolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VolverMenuActionPerformed
+       controlador.volverMenu(this);
+    }//GEN-LAST:event_btn_VolverMenuActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Actividad;
