@@ -218,6 +218,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ir a actividad"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ActividadActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

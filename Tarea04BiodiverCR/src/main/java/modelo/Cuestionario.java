@@ -37,8 +37,13 @@ public class Cuestionario {
         return opciones[numeroPregunta][numeroOpcion];
     }
 
-    public void guardarRespuesta(int numeroPregunta, int respuesta) {
-        respuestasUsuario[numeroPregunta] = respuesta;
+    public void guardarRespuesta(int pregunta, int respuesta) {
+        if (pregunta >= 0 && pregunta < 3
+                && respuesta >= 0 && respuesta < 3) {
+
+            respuestasUsuario[pregunta] = respuesta;
+
+        }
     }
 
     public void guardarIntento() {
@@ -72,18 +77,22 @@ public class Cuestionario {
             respuestasUsuario[i] = -1;
         }
     }
-    public int obtenerPuntajeIntento(int intento) {
-    int puntos = 0;
 
-    if (intento >= 0 && intento < cantidadIntentos) {
-        for (int i = 0; i < 3; i++) {
-            if (historial[intento][i] == respuestasCorrectas[i]) {
-                puntos++;
+    public int obtenerPuntajeIntento(int intento) {
+        if (intento < 0 || intento >= cantidadIntentos) {
+            return 0;
+        }
+        int puntos = 0;
+
+        if (intento >= 0 && intento < cantidadIntentos) {
+            for (int i = 0; i < 3; i++) {
+                if (historial[intento][i] == respuestasCorrectas[i]) {
+                    puntos++;
+                }
             }
         }
-    }
 
-    return puntos;
-}
+        return puntos;
+    }
 
 }

@@ -42,36 +42,36 @@ public class GUI_Portada extends javax.swing.JFrame {
 
         pnl_Fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_Empezar.setBackground(new java.awt.Color(102, 255, 102));
-        btn_Empezar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btn_Empezar.setForeground(new java.awt.Color(0, 102, 0));
+        btn_Empezar.setBackground(new java.awt.Color(0, 102, 0));
+        btn_Empezar.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        btn_Empezar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Empezar.setText("Empezar");
         btn_Empezar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_EmpezarActionPerformed(evt);
             }
         });
-        pnl_Fondo.add(btn_Empezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, -1, 40));
+        pnl_Fondo.add(btn_Empezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 200, 50));
 
-        btn_Salir.setBackground(new java.awt.Color(102, 255, 102));
+        btn_Salir.setBackground(new java.awt.Color(0, 102, 0));
         btn_Salir.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        btn_Salir.setForeground(new java.awt.Color(0, 102, 0));
+        btn_Salir.setForeground(new java.awt.Color(255, 255, 255));
         btn_Salir.setText("Salir");
         btn_Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SalirActionPerformed(evt);
             }
         });
-        pnl_Fondo.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, -1, -1));
+        pnl_Fondo.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
         lbl_Portada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PortadaMiniLibro.png"))); // NOI18N
-        pnl_Fondo.add(lbl_Portada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 590));
+        pnl_Fondo.add(lbl_Portada, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnl_Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

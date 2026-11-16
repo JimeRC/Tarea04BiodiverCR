@@ -88,6 +88,11 @@ public class GUI_Menu extends javax.swing.JFrame {
         btn_Salir.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btn_Salir.setForeground(new java.awt.Color(0, 102, 0));
         btn_Salir.setText("Salir");
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SalirActionPerformed(evt);
+            }
+        });
 
         lbl_MenuPrincipal.setFont(new java.awt.Font("Segoe UI Historic", 2, 18)); // NOI18N
         lbl_MenuPrincipal.setForeground(new java.awt.Color(0, 102, 0));
@@ -169,6 +174,10 @@ public class GUI_Menu extends javax.swing.JFrame {
     private void btn_VerResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerResultadosActionPerformed
       controlador.abrirResultados(this);
     }//GEN-LAST:event_btn_VerResultadosActionPerformed
+
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
+       controlador.salir();
+    }//GEN-LAST:event_btn_SalirActionPerformed
 
     /**
      * @param args the command line arguments

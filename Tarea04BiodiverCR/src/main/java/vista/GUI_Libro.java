@@ -114,6 +114,11 @@ public class GUI_Libro extends javax.swing.JFrame {
         btn_Actividad.setBackground(new java.awt.Color(0, 102, 0));
         btn_Actividad.setForeground(new java.awt.Color(255, 255, 255));
         btn_Actividad.setText("Ir a actividad");
+        btn_Actividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ActividadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnl_FondoLayout = new javax.swing.GroupLayout(pnl_Fondo);
         pnl_Fondo.setLayout(pnl_FondoLayout);
@@ -202,6 +207,10 @@ public class GUI_Libro extends javax.swing.JFrame {
     private void btn_VolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VolverMenuActionPerformed
        controlador.volverMenu(this);
     }//GEN-LAST:event_btn_VolverMenuActionPerformed
+
+    private void btn_ActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActividadActionPerformed
+       controlador.abrirActividad(this);
+    }//GEN-LAST:event_btn_ActividadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

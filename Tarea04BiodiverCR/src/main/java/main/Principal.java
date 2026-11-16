@@ -4,6 +4,8 @@
 
 package main;
 
+import vista.GUI_Portada;
+
 /**
  *
  * @author jimer
@@ -11,6 +13,9 @@ package main;
 public class Principal {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        GUI_Portada portada = new GUI_Portada();
+        portada.setLocationRelativeTo(null);
+        portada.setVisible(true);
     }
+    
 }

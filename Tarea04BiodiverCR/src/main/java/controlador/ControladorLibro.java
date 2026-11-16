@@ -146,6 +146,25 @@ public class ControladorLibro {
             );
         }
     }
+    public void abrirActividad(GUI_Libro ventanaLibro) {
+
+    if (cuestionario.getCantidadIntentos() < 3) {
+
+        reiniciarRespuestas();
+
+        GUI_Actividad actividad = new GUI_Actividad(this);
+
+        actividad.setLocationRelativeTo(null);
+        actividad.setVisible(true);
+
+        ventanaLibro.dispose();
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(
+                ventanaLibro, "Ya realizó los 3 intentos permitidos."
+        );
+    }
+}
 
     public void volverMenuActividad(GUI_Actividad actividad) {
         GUI_Menu menu = new GUI_Menu(this);
